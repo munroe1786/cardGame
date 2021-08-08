@@ -9,4 +9,12 @@ body {
     grid-template-rows: 7rem 2rem 7rem;
     gap: .5rem;
     cursor: pointer;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.deck {
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
 }
