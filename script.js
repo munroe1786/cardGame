@@ -9,10 +9,10 @@ function startGame() {
     const deck = new Deck()
     deck.shuffle()  
 
-    const deckMidpoint = Math.cell(deck.numberOfCards / 2)
+    const deckMidpoint = Math.ceil(deck.numberOfCards / 2)
     playerDeck = new Deck(deck.cards.slice(0, deckMidpoint))
-    computerDeck
+    computerDeck = new Deck(deck.cards.slice(deckMidpoint, deck.numberOfCards))
+
+    console.log(playerDeck)
+    console.log(computerDeck)
 }
-
-
-computerCardSlot.appendChild(deck.cards[0].getHTML())
