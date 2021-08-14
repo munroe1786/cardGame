@@ -23,5 +23,12 @@ function startGame() {
 function cleanBeforeRound() {
     computerCardSlot.innerHTML = ''
     playerCardSlot.innerHTML = ''
-    text.innerHTML = ''
+    text.innerText = ''
+
+    updateDeckCount()
+}
+
+function updateDeckCount() {
+    computerDeckElement.innerText = computerDeck.numberOfCards
+    playerDeckElement.innerText = playerDeck.numberOfCards
 }
