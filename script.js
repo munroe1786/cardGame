@@ -30,6 +30,7 @@ function startGame() {
 }
 
 function cleanBeforeRound() {
+    inRound = false
     computerCardSlot.innerHTML = ''
     playerCardSlot.innerHTML = ''
     text.innerText = ''
@@ -41,6 +42,9 @@ function flipCards() {
     inRound = true
     const playerCard = playerDeck.pop()
     const computerCard = computerDeck.pop()
+
+    playerCardSlot.appendChild(playerCard.getHTML())
+    computerCardSlot.appendChild(computerCard.getHTML())
 }
 
 function updateDeckCount() {
