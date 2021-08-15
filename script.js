@@ -63,6 +63,20 @@ function flipCards() {
     computerCardSlot.appendChild(computerCard.getHTML())
 
     updateDeckCount()
+
+    if (isRoundWinner(playerCard, computerCard)) {
+        text.innerText = "Win"
+        playerDeck.push(playerCard)
+        playerDeck.push(computerCard)
+    } else if (isRoundWinner(computerCard, playerCard)) {
+        text.innerText = "Lose"
+        computerDeck.push(playerCard)
+        computerDeck.push(computerCard)
+    } else {
+        text.innerText = "Draw"
+        playerDeck.push(playerCard)
+        computerDeck.push(computerCard)
+    }
 }
 
 function updateDeckCount() {
@@ -71,5 +85,5 @@ function updateDeckCount() {
 }
 
 function isRoundWinner(cardOne, cardTwo) {
-
+    return CARD_VALUE_MAP[cardOne.value] > CARD_VALUE_MAP[cardTwo.value]
 }
